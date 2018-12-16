@@ -1,0 +1,6 @@
+<p color="primary">
+  <button class="btn"  routerLink="/home" *ngIf="!_authSer.isLogindIn()">Home</button>
+  <button class="btn" routerLink="/admin" *ngIf="_authSer.isLogindIn()">Admin</button>
+  <button class="btn"  routerLink="/login" *ngIf="!_authSer.isLogindIn()">Login</button>
+  <button  class="btn" *ngIf="_authSer.isLogindIn()" (click)="_authSer.logOut()">Logout</button>
+</p>
