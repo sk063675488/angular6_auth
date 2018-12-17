@@ -1,6 +1,10 @@
-<p color="primary">
-  <button class="btn"  routerLink="/home" *ngIf="!_authSer.isLogindIn()">Home</button>
-  <button class="btn" routerLink="/admin" *ngIf="_authSer.isLogindIn()">Admin</button>
-  <button class="btn"  routerLink="/login" *ngIf="!_authSer.isLogindIn()">Login</button>
-  <button  class="btn" *ngIf="_authSer.isLogindIn()" (click)="_authSer.logOut()">Logout</button>
-</p>
+<div class="row">
+  <div class="container-fluid">
+      <nav class="navbar navbar-dark bg-dark">
+          <a class="navbar-brand" routerLink="/home" *ngIf="!_authSer.isLogindIn()">Home</a>
+          <a class="navbar-brand" routerLink="/admin" *ngIf="_authSer.isLogindIn()">Admin</a>
+          <a routerLink="/login" *ngIf="!_authSer.isLogindIn()" class="btn btn-outline-success  my-sm-0">Login</a> 
+          <a *ngIf="_authSer.isLogindIn()" (click)="_authSer.logOut()" class="btn btn-outline-success my-sm-0">Logout</a> 
+      </nav>
+  </div>
+</div>
