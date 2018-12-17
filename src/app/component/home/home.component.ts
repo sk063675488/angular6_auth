@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ChangTextDirective} from '../../directive/chang-text.directive'
+import { ChangTextDirective} from '../../directive/chang-text.directive';
+import {NgbCarouselConfig} from '@ng-bootstrap/ng-bootstrap'
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -8,9 +10,15 @@ import { ChangTextDirective} from '../../directive/chang-text.directive'
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private chntxt:ChangTextDirective) { }
+  constructor(private chntxt:ChangTextDirective, private slider:NgbCarouselConfig) { 
+    slider.interval = 2000;
+    slider.wrap = true;
+    slider.keyboard = false;
+    slider.pauseOnHover = false;
+  }
 
   ngOnInit() {
+
   }
 
 }

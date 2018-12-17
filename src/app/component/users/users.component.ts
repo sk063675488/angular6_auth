@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { GetUserService } from 'src/app/service/get-user.service';
+import {FilterPipe} from '../../pipe/filter.pipe'
 
 @Component({
   selector: 'app-users',

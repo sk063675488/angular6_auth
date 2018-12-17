@@ -10,9 +10,6 @@ export class ChangTextDirective implements OnInit {
   constructor(private elRef:ElementRef) { }
   
   ngOnInit(){
-    this.elRef.nativeElement.innerText = this.Title;
-  }
-  @HostListener('mouseenter') onmouseenter():void{
-    this.elRef.nativeElement.innerText = "sandeep kumar changed"
+    this.elRef.nativeElement.Style.width = "100%"
   }
 }

@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {AuthGuard} from './auth/auth.guard'
+import {AuthGuard} from './auth/auth.guard';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,6 +15,7 @@ import { UsersComponent } from './component/users/users.component';
 import { GetUserService } from './service/get-user.service';
 import { HttpClientModule } from '@angular/common/http';
 import { UserdetailsComponent } from './component/userdetails/userdetails.component';
+import { FilterPipe } from './pipe/filter.pipe';
 
 @NgModule({
   declarations: [
@@ -24,14 +26,16 @@ import { UserdetailsComponent } from './component/userdetails/userdetails.compon
     NavComponent,
     ChangTextDirective,
     UsersComponent,
-    UserdetailsComponent
+    UserdetailsComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgbModule
   ],
   providers: [AuthGuard,GetUserService],
   bootstrap: [AppComponent]
